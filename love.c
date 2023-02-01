@@ -12,7 +12,7 @@ int main()
 	{
 		close(pi[0]);
 		FILE *fp;
-		const char* p[3]={"p1","p2","p3"};
+		const char* p[4]={"p0","p1","p2","p3"};
 		fd_set set;
 		struct timeval time;
 		time.tv_sec = 0;
@@ -20,7 +20,7 @@ int main()
 	//	FD_ZERO(&set);
 	//	FD_SET(pi[1],&set);
 	//	select(1,&set,0,0,0);
-		for(int i=0;;i=(i+1)%3)
+		for(int i=0;;i=(i+1)%4)
 		{
 			fp = fopen(p[i],"r+");
 			while(!feof(fp))
